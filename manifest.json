@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "hide the ELO on lichess.org",
+    "description": "This extension hides every ranking and player name on lichess game board to guess the ELO, yaaay!",
+    "version": "1.0",
+    "icons": {
+        "16": "assets/icon-16.png",
+        "48": "assets/icon-48.png",
+        "128": "assets/icon-128.png"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://lichess.org/*",
+                "https://lichess.org/*"
+            ],
+            "js": [
+                "jquery.js",
+                "injector.js"
+            ]
+        }
+    ]
+}
